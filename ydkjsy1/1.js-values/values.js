@@ -54,7 +54,7 @@ console.log(typeof false);
 /**
  * undefined and null are used to indicate absence of value (emptiness)
  * 
- * NOTE: typeof null returns 'object' ._. bug!
+ * NOTE: typeof null returns 'object' ._. BUG!
  */
 console.log(typeof undefined);
 console.log(typeof null);
