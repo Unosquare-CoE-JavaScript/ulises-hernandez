@@ -1,6 +1,6 @@
 /**
  * ------------------------------------------
- *      Analyzing variables and scopes
+ *      2. Analyzing variables and scopes
  * ------------------------------------------
  * The three actors who participate in creating variables definition
  * and their respective scopes are the Compiler, the Scope Manager and 

@@ -1,6 +1,6 @@
 /**
  * -------------------------------------------
- *                  Scope
+ *                1. Scope
  * -------------------------------------------
  * 
  * Scope is determined at compile time and is the context where a variables and 
