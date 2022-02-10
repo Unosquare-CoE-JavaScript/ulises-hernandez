@@ -21,10 +21,10 @@
 // the first one is a function that sets the promise as fullfilled when its excecuted and 
 // the other one is a function that sets the promise as rejected when its excecuted
 const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        // promise will set as fullfilled
-        resolve('completed');
-    }, 2000);
+  setTimeout(() => {
+    // promise will set as fullfilled
+    resolve('completed');
+  }, 2000);
 });
 
 /**
@@ -36,14 +36,14 @@ const myPromise = new Promise((resolve, reject) => {
  * 
  */
 myPromise.then(
-    response => {
-        // Promise was fulfilled
-        console.log(response); // completed
-    },
-    error => {
-        // Promise was rejected
-        console.log(error);
-    }
+  response => {
+    // Promise was fulfilled
+    console.log(response); // completed
+  },
+  error => {
+    // Promise was rejected
+    console.log(error);
+  }
 )
 
 
@@ -53,18 +53,18 @@ myPromise.then(
  * to resolve the returned promise
  */
 myPromise.then(response => {
-    console.log(response); // completed
+  console.log(response); // completed
 
-    // returns a new promise to be chained
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('another result');
-        }, 2000);
-    })
+  // returns a new promise to be chained
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('another result');
+    }, 2000);
+  })
 })
-.then(response => { //chaining the returned promise
+  .then(response => { //chaining the returned promise
     console.log(response) // another result
-});
+  });
 
 
 /**
@@ -72,21 +72,21 @@ myPromise.then(response => {
  * Promise also can chain the 'catch' method to handle
  * when a promise is rejected
  */
- myPromise.then(response => {
-    console.log(response);
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject('this is an error');
-        }, 2000);
-    })
+myPromise.then(response => {
+  console.log(response);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('this is an error');
+    }, 2000);
+  })
 })
-.then(response => { 
-    console.log(response) 
-})
-.catch(err => {
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => {
     // Promise was rejected
     console.log(err) // this is an error
-});
+  });
 
 
 /**
@@ -94,18 +94,18 @@ myPromise.then(response => {
  * Additionally you can chain the 'finally' method to excecute
  * a call back either the promise is fullfilled or rejected
  */
- myPromise.then(response => {
-    console.log(response);
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject('this is an error');
-        }, 2000);
-    })
+myPromise.then(response => {
+  console.log(response);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('this is an error');
+    }, 2000);
+  })
 })
-.then(response => { 
-    console.log(response) 
-})
-.catch(err => {
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => {
     console.log(err) // this is an error
-})
-.finally(() => console.log('Promise completed'));
+  })
+  .finally(() => console.log('Promise completed'));

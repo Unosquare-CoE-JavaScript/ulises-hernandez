@@ -12,25 +12,25 @@
 
 
 function gretting(name) {
-    console.log(`Hello ${name}`);
+  console.log(`Hello ${name}`);
 }
 
 // Sychronous callback
 function processSyncUserName(callback) {
-    let name = 'Ulises';
-    // Excecutes callback after get the user name
-    callback(name);
+  let name = 'Ulises';
+  // Excecutes callback after get the user name
+  callback(name);
 }
 
 processSyncUserName(gretting); // Hello Ulises
 
 // Asynchronous callback
 function processAsyncUserName(callback) {
-    let name = 'Ulises';
-    setTimeout(function () { // This anonymous function is even a callback itself
-        // Excecutes callback some time (5 seconds in this case) after get the user name
-        callback(name);
-    }, 5000)
+  let name = 'Ulises';
+  setTimeout(function () { // This anonymous function is even a callback itself
+    // Excecutes callback some time (5 seconds in this case) after get the user name
+    callback(name);
+  }, 5000)
 }
 
 processAsyncUserName(gretting); // Hello Ulises
