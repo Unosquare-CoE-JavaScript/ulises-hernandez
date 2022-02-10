@@ -26,8 +26,8 @@ processSyncUserName(gretting); // Hello Ulises
 
 // Asynchronous callback
 function processAsyncUserName(callback) {
-    let name = 'Ulises';ß
-    setTimeout(function () {
+    let name = 'Ulises';
+    setTimeout(function () { // This anonymous function is even a callback itself
         // Excecutes callback some time (5 seconds in this case) after get the user name
         callback(name);
     }, 5000)
