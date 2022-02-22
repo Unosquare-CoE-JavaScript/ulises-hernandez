@@ -9,6 +9,9 @@ if (cluster.isMaster) {
   cluster.fork();
   cluster.fork();
 
+  // It is not recommended create a lot of forks to cluster Node apps
+  // It's recommeded the use of other tools like PM2 for cluster.
+
 } else {
   const express = require('express');
   const app = express();

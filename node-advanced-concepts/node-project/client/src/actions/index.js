@@ -14,14 +14,17 @@ export const handleToken = token => async dispatch => {
 };
 
 export const submitBlog = (values, file, history) => async dispatch => {
+  // Get the url's file from AWS S3
   const uploadConfig = await axios.get('/api/upload');
 
+  // Upload the file to S3 with the given key
   const upload = await axios.put(uploadConfig.data.url, file, {
     headers: {
       'Content-Type': file.type
     }
   });
 
+  // Persist blog info along its file's key
   const res = await axios.post('/api/blogs', {
     ...values,
     imageUrl: uploadConfig.data.key
