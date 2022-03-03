@@ -16,7 +16,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@production-angular/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@production-angular/api-interfaces": [
+        "libs/api-interfaces/src/index.ts"
+      ],
+      "@production-angular/core-data": ["libs/core-data/src/index.ts"],
+      "@production-angular/corestate": ["libs/corestate/src/index.ts"],
+      "@production-angular/material": ["libs/material/src/index.ts"],
+      "@production-angular/core-state": ["libs/core-state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
