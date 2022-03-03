@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/corestate',
     '<rootDir>/libs/material',
     '<rootDir>/libs/core-state',
+    '<rootDir>/libs/ui-toolbar',
   ],
 };

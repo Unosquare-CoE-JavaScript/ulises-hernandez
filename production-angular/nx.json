@@ -47,6 +47,9 @@
     },
     "core-state": {
       "tags": []
+    },
+    "ui-toolbar": {
+      "tags": []
     }
   }
 }
