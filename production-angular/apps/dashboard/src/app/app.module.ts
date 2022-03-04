@@ -8,6 +8,7 @@ import {
   CoreStateModule
 } from '@production-angular/core-state';
 import { MaterialModule } from '@production-angular/material';
+import { UiToolbarModule } from '@production-angular/ui-toolbar';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RoutingModule } from './routing.module';
@@ -27,6 +28,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
     MaterialModule,
     CoreStateModule,
     RoutingModule,
+    UiToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
