@@ -1,8 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@production-angular/material'
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { ToolbarComponent } from './toolbar.component';
+
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -12,7 +13,8 @@ describe('ToolbarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        MaterialModule
+        MatIconModule,
+        MatToolbarModule
       ],
       declarations: [ ToolbarComponent ]
     })
@@ -27,5 +29,6 @@ describe('ToolbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component instanceof ToolbarComponent).toBeTruthy();
   });
 });
