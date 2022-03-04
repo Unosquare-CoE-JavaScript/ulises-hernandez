@@ -25,7 +25,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [
+  exports: [
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -50,6 +50,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-  ],
+  ]
 })
 export class MaterialModule {}

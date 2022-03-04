@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MaterialModule } from '@production-angular/material';
 import { ToolbarComponent } from './toolbar.component';
 
 
@@ -13,8 +12,7 @@ describe('ToolbarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        MatIconModule,
-        MatToolbarModule
+        MaterialModule
       ],
       declarations: [ ToolbarComponent ]
     })
