@@ -1,4 +1,8 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialModule } from '@production-angular/material';
+import { WidgetsListComponent } from '../widgets/widgets-list/widgets-list.component';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +12,15 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      imports:[
+        CommonModule,
+        HttpClientModule,
+        MaterialModule
+      ],
+      declarations: [ 
+        HomeComponent,
+        WidgetsListComponent
+      ]
     })
     .compileComponents();
   });
