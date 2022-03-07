@@ -23,7 +23,8 @@
       "@production-angular/corestate": ["libs/corestate/src/index.ts"],
       "@production-angular/material": ["libs/material/src/index.ts"],
       "@production-angular/core-state": ["libs/core-state/src/index.ts"],
-      "@production-angular/ui-toolbar": ["libs/ui-toolbar/src/index.ts"]
+      "@production-angular/ui-toolbar": ["libs/ui-toolbar/src/index.ts"],
+      "@env/*": ["apps/dashboard/src/environments/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
