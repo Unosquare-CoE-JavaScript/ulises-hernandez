@@ -8,7 +8,7 @@ import { Widget } from '@production-angular/api-interfaces';
 })
 export class WidgetDetailsComponent {
 
-  currentWidget: Widget = {} as Widget;
+  currentWidget: Widget;
   originalTitle = '';
 
   @Input() set widget(value: Widget) {
@@ -19,6 +19,6 @@ export class WidgetDetailsComponent {
     this.currentWidget = { ...value };
   }
 
-  @Output() saved = new EventEmitter();
-  @Output() cancelled = new EventEmitter();
+  @Output() saved = new EventEmitter;
+  @Output() cancelled = new EventEmitter;
 }

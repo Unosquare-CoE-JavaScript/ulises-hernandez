@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Widget } from '@production-angular/api-interfaces';
-import { uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class WidgetsService {
@@ -13,7 +13,8 @@ export class WidgetsService {
   ];
 
   create(widget: Widget) {
-    return this.mockWidgets = [...this.mockWidgets, Object.assign({}, widget, {id: uuidv4()})];
+    this.mockWidgets = [...this.mockWidgets, Object.assign({}, widget, { id: uuidv4() })];
+    return this.mockWidgets; 
   }
 
   findAll() {

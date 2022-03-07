@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { Widget } from '@production-angular/api-interfaces';
 import { WidgetsService } from './widgets.service';
 
@@ -21,7 +21,7 @@ export class WidgetsController {
     return this.widgetsService.findOne(id);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() widget: Widget) {
     return this.widgetsService.update(id, widget);
   }
