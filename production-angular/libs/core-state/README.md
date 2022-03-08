@@ -1,7 +1,7 @@
 # core-state
 
-This library was generated with [Nx](https://nx.dev).
+This library is in charge of application's state management. It implements REDUX pattenr and uses [NGRX](https://ngrx.io).
 
-## Running unit tests
+## Create store module for entities
 
-Run `nx test core-state` to execute the unit tests.
+Run `x g @nrwl/angular:ngrx widgets --module=libs/core-state/src/lib/core-state.module.ts --directory widgets --default --facade` to generate state module.
