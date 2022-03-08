@@ -8,7 +8,7 @@
   </div>
   <div class="details-component">
     <production-angular-widget-details
-      [widget]="selectedWidget"
+      [widget]="selectedWidget$ | async"
       (saved)="saveWidget($event)"
       (cancelled)="resetForm()">
     </production-angular-widget-details>

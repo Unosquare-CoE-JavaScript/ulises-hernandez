@@ -9,7 +9,6 @@ import {
 
 // Lookup the 'Widgets' feature state managed by NgRx
 export const getWidgetsState = createFeatureSelector<
-  WidgetsPartialState,
   State
 >(WIDGETS_FEATURE_KEY);
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Widget } from '@production-angular/api-interfaces';
-import { WidgetsService } from '@production-angular/core-data';
+import { WidgetsFacade } from '@production-angular/core-state';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,13 +10,14 @@ import { Observable } from 'rxjs';
 })
 export class WidgetsComponent implements OnInit {
   
-  widgets$: Observable<Widget[]>;
-  selectedWidget: Widget;
+  widgets$: Observable<Widget[]> = this.widgetsFacade.allWidgets$;
+  selectedWidget$: Observable<Widget> = this.widgetsFacade.selectedWidgets$;
 
-  constructor(private widgetsService: WidgetsService) { }
+  constructor(private widgetsFacade: WidgetsFacade) { }
 
   ngOnInit(): void {
     this.reset();
+    this.widgetsFacade.mutations$.subscribe(() => this.reset());
   }
 
   reset() {
@@ -25,42 +26,23 @@ export class WidgetsComponent implements OnInit {
   }
 
   resetForm() {
-    this.selectedWidget = {
-      id: null,
-      title: '',
-      description: ''
-    }
+    this.selectWidget(null);
   }
 
   selectWidget(widget: Widget) {
-    this.selectedWidget = widget;
+    this.widgetsFacade.selectWidget(widget?.id);
   }
 
   loadWidgets() {
-    this.widgets$ = this.widgetsService.all();
+    this.widgetsFacade.loadWidgets();
   }
 
   saveWidget(widget: Widget) {
-    if (widget.id) {
-      this.updateWidget(widget) 
-    } else {
-      this.createWidget(widget);
-    }
-  }
-
-  createWidget(widget: Widget) {
-    this.widgetsService.create(widget)
-      .subscribe(result => this.reset());
-  }
-
-  updateWidget(widget: Widget) {
-    this.widgetsService.update(widget)
-      .subscribe(result => this.reset());
+    this.widgetsFacade.saveWidget(widget)
   }
 
   deleteWidget(widget: Widget) {
-    this.widgetsService.delete(widget)
-      .subscribe(result => this.reset());
+    this.widgetsFacade.deleteWidget(widget);
   }
 
 

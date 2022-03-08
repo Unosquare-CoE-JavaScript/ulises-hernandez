@@ -1,12 +1,13 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
+import { Widget } from '@production-angular/api-interfaces';
 import * as WidgetsActions from './widgets.actions';
 import { WidgetsEntity } from './widgets.models';
 
 
 export const WIDGETS_FEATURE_KEY = 'widgets';
 
-export interface State extends EntityState<WidgetsEntity> {
+export interface State extends EntityState<Widget> {
   selectedId?: string | number; // which Widgets record has been selected
   loaded: boolean; // has the Widgets list been loaded
   error?: string | null; // last known error (if any)
@@ -16,8 +17,8 @@ export interface WidgetsPartialState {
   readonly [WIDGETS_FEATURE_KEY]: State;
 }
 
-export const widgetsAdapter: EntityAdapter<WidgetsEntity> = createEntityAdapter<
-  WidgetsEntity
+export const widgetsAdapter: EntityAdapter<Widget> = createEntityAdapter<
+  Widget
 >();
 
 export const initialState: State = widgetsAdapter.getInitialState({

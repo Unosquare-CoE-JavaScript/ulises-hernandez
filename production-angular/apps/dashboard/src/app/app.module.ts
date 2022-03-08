@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
 import { CoreDataModule } from '@production-angular/core-data';
 import {
   CoreStateModule
@@ -24,7 +23,6 @@ import { WidgetsComponent } from './widgets/widgets.component';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
     CoreDataModule,
     FormsModule,
     MaterialModule,

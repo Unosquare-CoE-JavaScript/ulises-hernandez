@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { select, Store, Action, ActionsSubject } from '@ngrx/store';
 import { Widget } from '@production-angular/api-interfaces';
+import { filter } from 'rxjs/operators';
 
 import * as WidgetActions from './widgets.actions';
 import * as fromWidgets from './widgets.reducer';
@@ -13,13 +14,21 @@ export class WidgetsFacade {
   allWidgets$ = this.store.pipe(select(WidgetsSelectors.getAllWidgets));
   selectedWidgets$ = this.store.pipe(select(WidgetsSelectors.getSelected));
 
-  constructor(private store: Store<fromWidgets.WidgetsPartialState>, private actions$: ActionsSubject) {}
+  mutations$ = this.actions$.pipe(
+    filter((action: Action) => 
+      action.type === WidgetActions.createWidget({} as any).type ||
+      action.type === WidgetActions.updateWidget({} as any).type ||
+      action.type === WidgetActions.deleteWidget({} as any).type
+    )
+  )
+
+  constructor(private store: Store, private actions$: ActionsSubject) {}
 
   selectWidget(selectedId: string) {
     this.dispatch(WidgetActions.selectWidget({ selectedId }));
   }
 
-  loadWidgeets() {
+  loadWidgets() {
     this.dispatch(WidgetActions.loadWidgets());
   }
 
