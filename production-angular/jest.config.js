@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/material',
     '<rootDir>/libs/core-state',
     '<rootDir>/libs/ui-toolbar',
+    '<rootDir>/libs/testing',
   ],
 };
