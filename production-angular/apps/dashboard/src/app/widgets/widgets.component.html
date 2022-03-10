@@ -1,0 +1,16 @@
+<div class="component-container">
+  <div class="list-component">
+    <production-angular-widgets-list
+      [widgets]="widgets$ | async"
+      (selected)="selectWidget($event)"
+      (deleted)="deleteWidget($event)">
+    </production-angular-widgets-list>
+  </div>
+  <div class="details-component">
+    <production-angular-widget-details
+      [widget]="selectedWidget$ | async"
+      (saved)="saveWidget($event)"
+      (cancelled)="resetForm()">
+    </production-angular-widget-details>
+  </div>
+</div>
